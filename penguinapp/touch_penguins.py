@@ -4,23 +4,24 @@ import streamlit as st
 import pandas as pd
 st.title("Palmer's Penguins")
 #import our data
+
 penguins_df = pd.read_csv('https://github.com/tylerjrichards/streamlit_apps/blob/main/penguin_app/penguins.csv?raw=true')
 st.write(penguins_df.head())
 
 import altair as alt
 import seaborn as sns
 import time
-penguin_file = st.file_uploader('Select Your Local Penguins CSV')
+#penguin_file = st.file_uploader('Select Your Local Penguins CSV')
 
-@   st.cache_data
-def load_file(penguin_file):
-    time.sleep(3)
-    if penguin_file is not None:
-        df = pd.read_csv(penguin_file)
-    else:
-        df = pd.read_csv('penguins.csv')
-    return df
-penguins_df = load_file(penguin_file)
+
+#def load_file(penguin_file):
+#    time.sleep(3)
+#    if penguin_file is not None:
+#        df = pd.read_csv(penguin_file)
+#    else:
+#        df = pd.read_csv('penguins.csv')
+#    return df
+#penguins_df = load_file(penguin_file)
 
 st.markdown('Use this Streamlit app to make your own scatterplot about penguins!')
 #selected_species = st.selectbox('What species would you like to visualize?',
